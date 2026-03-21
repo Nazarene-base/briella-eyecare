@@ -32,7 +32,7 @@ export default function BlogPage() {
                         href="https://wa.me/2349090368786?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment."
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#3A9D3B] transition-colors duration-200"
+                        className="inline-flex bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-accent-dark transition-colors duration-200"
                     >
                         Book an Appointment
                     </Link>

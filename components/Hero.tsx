@@ -45,7 +45,7 @@ export default function Hero() {
                     href={whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-3 bg-accent text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-[#3A9D3B] hover:scale-105 transition-all duration-300 shadow-xl"
+                    className="inline-flex items-center gap-3 bg-accent text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-accent-dark hover:scale-105 transition-all duration-300 shadow-xl"
                 >
                     <MessageCircle size={24} />
                     Book Appointment

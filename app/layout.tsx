@@ -19,8 +19,35 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
+    metadataBase: new URL('https://briella-eyecare.vercel.app'),
     title: "Briella Eyecare - Professional Optometry Services in Benin City",
     description: "An accredited private healthcare facility that offers quality eye care services. Comprehensive eye examinations, eyeglasses, contact lenses, and more.",
+    icons: {
+        icon: '/logo.jpg',
+        apple: '/logo.jpg',
+    },
+    openGraph: {
+        title: "Briella Eyecare - Professional Optometry Services in Benin City",
+        description: "Expert eye care for your whole family. Comprehensive exams, eyeglasses, contact lenses, pediatric optometry, and disease management in Benin City.",
+        url: "https://briella-eyecare.vercel.app",
+        siteName: "Briella Eyecare",
+        images: [
+            {
+                url: '/hero-banner.jpg',
+                width: 1200,
+                height: 630,
+                alt: 'Briella Eyecare - Professional Eye Care',
+            },
+        ],
+        locale: 'en_NG',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: "Briella Eyecare - Professional Optometry Services in Benin City",
+        description: "Expert eye care for your whole family. Comprehensive exams, eyeglasses, contact lenses, and more.",
+        images: ['/hero-banner.jpg'],
+    },
 };
 
 export default function RootLayout({

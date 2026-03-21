@@ -21,7 +21,30 @@ export default function ContactPage() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
                     {/* Left Column - Contact Form */}
                     <div className="bg-white border border-gray-200 rounded-xl p-8 md:p-10 shadow-sm">
-                        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-5">
+                        <h2 className="text-2xl font-bold text-primary mb-6">Send us a message</h2>
+                        <p className="text-gray-600 mb-6">
+                            For immediate booking, use the WhatsApp button below. For general inquiries, email us at{" "}
+                            <a href={`mailto:${CONTACT_INFO.email}`} className="text-secondary hover:underline">
+                                {CONTACT_INFO.email}
+                            </a>
+                        </p>
+                        <a
+                            href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent("Hello, I would like to book an appointment at Briella Eyecare.")}`}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block w-full bg-accent hover:bg-accent/90 text-white text-center font-semibold py-4 rounded-lg text-lg transition-colors duration-200 mb-6"
+                        >
+                            Book Appointment via WhatsApp
+                        </a>
+                        <div className="border-t border-gray-200 pt-6">
+                            <p className="text-sm text-gray-500 text-center">
+                                Prefer email? Send your message to{" "}
+                                <a href={`mailto:${CONTACT_INFO.email}`} className="text-secondary hover:underline font-medium">
+                                    {CONTACT_INFO.email}
+                                </a>
+                            </p>
+                        </div>
+                        <form style={{display: 'none'}} action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-5">
                             <div>
                                 <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
                                     Full Name
@@ -76,7 +99,7 @@ export default function ContactPage() {
                             </div>
                             <button
                                 type="submit"
-                                className="w-full bg-accent hover:bg-[#3A9D3B] text-white font-semibold py-4 rounded-lg text-lg transition-colors duration-200"
+                                className="w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 rounded-lg text-lg transition-colors duration-200"
                             >
                                 Send Message
                             </button>

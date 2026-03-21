@@ -10,7 +10,10 @@ module.exports = {
             colors: {
                 primary: '#2E0F6E',      // Deep Indigo - Headings, Footer, "briella" text
                 secondary: '#2563EB',    // Medical Blue - Links, "EYECARE" text
-                accent: '#44B846',       // Fresh Green - Buttons, CTAs, eye symbol
+                accent: {
+                    DEFAULT: '#44B846',  // Fresh Green - Buttons, CTAs, eye symbol
+                    dark: '#3A9D3B',     // Darker green for hover states
+                },
                 background: '#FFFFFF',   // White
                 surface: '#F3F4F6',     // Light Gray
             },

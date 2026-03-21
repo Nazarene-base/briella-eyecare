@@ -1,6 +1,6 @@
 import Link from "next/link";
-import { Eye, Focus, FileText, Glasses, Activity, Baby, Target, LucideIcon } from "lucide-react";
-import { SERVICES } from "@/lib/constants";
+import { Eye, Focus, FileText, Glasses, Activity, Baby, Target, MessageCircle, LucideIcon } from "lucide-react";
+import { SERVICES, CONTACT_INFO } from "@/lib/constants";
 
 const ICON_MAP: Record<string, LucideIcon> = {
     Eye: Eye,
@@ -33,22 +33,38 @@ export default function ServicesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {SERVICES.map((service) => {
                             const Icon = ICON_MAP[service.icon] || Eye;
+                            const whatsappMessage = encodeURIComponent(
+                                `Hello, I would like to book an appointment for ${service.title}.`
+                            );
+                            const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
+
                             return (
                                 <div
                                     key={service.id}
-                                    className="bg-white border border-gray-200 rounded-xl p-10 hover:border-accent hover:shadow-lg transition-all duration-200 flex flex-col md:flex-row gap-6 items-start"
+                                    className="bg-white border border-gray-200 rounded-xl p-10 hover:border-accent hover:shadow-lg transition-all duration-200 flex flex-col gap-6"
                                 >
-                                    <div className="flex-shrink-0">
-                                        <Icon size={56} className="text-accent" />
+                                    <div className="flex flex-col md:flex-row gap-6 items-start">
+                                        <div className="flex-shrink-0">
+                                            <Icon size={56} className="text-accent" />
+                                        </div>
+                                        <div className="flex-grow">
+                                            <h3 className="text-2xl font-semibold text-primary mb-3">
+                                                {service.title}
+                                            </h3>
+                                            <p className="text-base text-gray-500 leading-relaxed mb-4">
+                                                {service.description}
+                                            </p>
+                                        </div>
                                     </div>
-                                    <div>
-                                        <h3 className="text-2xl font-semibold text-primary mb-3">
-                                            {service.title}
-                                        </h3>
-                                        <p className="text-base text-gray-500 leading-relaxed">
-                                            {service.description}
-                                        </p>
-                                    </div>
+                                    <Link
+                                        href={whatsappUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark transition-colors duration-200"
+                                    >
+                                        <MessageCircle size={20} />
+                                        Book This Service
+                                    </Link>
                                 </div>
                             );
                         })}
@@ -63,10 +79,13 @@ export default function ServicesPage() {
                         Ready to book your appointment?
                     </h2>
                     <Link
-                        href="/contact"
-                        className="inline-block bg-accent text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-[#3A9D3B] transition-colors duration-200"
+                        href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent("Hello, I would like to book an appointment at Briella Eyecare.")}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-3 bg-accent text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-accent-dark transition-colors duration-200"
                     >
-                        Contact Us
+                        <MessageCircle size={24} />
+                        Book Appointment via WhatsApp
                     </Link>
                 </div>
             </section>
