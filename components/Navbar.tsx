@@ -63,7 +63,7 @@ export default function Navbar() {
 
                 {/* Call Us Button (Desktop) */}
                 <Link
-                    href="/contact"
+                    href="tel:+2349090368786"
                     className="hidden md:block bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#3A9D3B] transition-colors duration-200"
                 >
                     Call Us
@@ -97,7 +97,7 @@ export default function Navbar() {
                             </Link>
                         ))}
                         <Link
-                            href="/contact"
+                            href="tel:+2349090368786"
                             onClick={() => setIsMenuOpen(false)}
                             className="block w-full bg-accent text-white text-center px-6 py-3 rounded-lg font-semibold hover:bg-[#3A9D3B] transition-colors duration-200"
                         >

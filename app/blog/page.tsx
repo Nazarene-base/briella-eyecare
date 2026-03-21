@@ -23,17 +23,27 @@ export default function BlogPage() {
                         <FileText size={64} className="text-accent" />
                     </div>
                 </div>
-                <h2 className="text-4xl font-bold text-primary mb-6">Coming Soon</h2>
+                <h2 className="text-4xl font-bold text-primary mb-6">Eye Care Insights — Coming Soon</h2>
                 <p className="text-lg text-gray-500 leading-relaxed mb-12">
-                    We're preparing helpful articles about eye care and vision health. Check back soon!
+                    We're preparing helpful articles on eye health, vision care tips, and what to expect during your visit. Check back soon.
                 </p>
-                <Link
-                    href="/"
-                    className="inline-flex items-center gap-2 text-secondary font-semibold hover:underline transition-all"
-                >
-                    <ArrowLeft size={20} />
-                    Back to Home
-                </Link>
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
+                    <Link
+                        href="https://wa.me/2349090368786?text=Hello%2C%20I%20would%20like%20to%20book%20an%20appointment."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex bg-accent text-white px-8 py-3 rounded-lg font-semibold hover:bg-[#3A9D3B] transition-colors duration-200"
+                    >
+                        Book an Appointment
+                    </Link>
+                    <Link
+                        href="/"
+                        className="inline-flex items-center gap-2 text-secondary font-semibold hover:underline transition-all"
+                    >
+                        <ArrowLeft size={20} />
+                        Back to Home
+                    </Link>
+                </div>
             </section>
         </main>
     );

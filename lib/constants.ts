@@ -1,11 +1,18 @@
 export const CONTACT_INFO = {
-    address: "31, Akenzua Road, off Airport Road, Bénin, Nigeria",
-    phone: "0803 218 4887",
-    whatsapp: "2348032184887", // International format
-    email: "uwamarinlinda@gmail.com",
-    hours: "9am - 5pm, Monday to Saturday",
+    address: [
+        "1, Eheneden Street, off Ekehuan Road, Benin City",
+        "31, Akenzua Street, off Airport Road, Benin City"
+    ],
+    phone: "0909 036 8786",
+    whatsapp: "2349090368786", // International format
+    email: "Briella-eyecare@gmail.com",
+    hours: [
+        "Monday – Friday: 8:00am – 5:00pm",
+        "Saturday: 10:00am – 2:00pm",
+        "Sunday: Closed"
+    ],
     socials: {
-        facebook: "https://www.facebook.com/profile.php?id=61563135386765",
+        facebook: "https://www.facebook.com/amadin.ogbebor.uwamarin",
         instagram: "https://www.instagram.com/briella.eyecare.ng"
     }
 };

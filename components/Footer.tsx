@@ -24,7 +24,11 @@ export default function Footer() {
                         <div className="space-y-3">
                             <div className="flex items-start gap-3">
                                 <MapPin size={20} className="text-accent flex-shrink-0 mt-1" />
-                                <p className="leading-relaxed">{CONTACT_INFO.address}</p>
+                                <div>
+                                    {CONTACT_INFO.address.map((addr, i) => (
+                                        <p key={i} className="leading-relaxed mb-1">{addr}</p>
+                                    ))}
+                                </div>
                             </div>
                             <div className="flex items-center gap-3">
                                 <Phone size={20} className="text-accent flex-shrink-0" />
@@ -66,12 +70,13 @@ export default function Footer() {
                     {/* Column 3 - Hours & Social Media */}
                     <div>
                         <h3 className="text-xl font-bold mb-4">Operating Hours</h3>
-                        <div className="mb-6">
-                            <div className="flex items-center gap-3 mb-2">
-                                <Clock size={20} className="text-accent flex-shrink-0" />
-                                <p>9am - 5pm</p>
-                            </div>
-                            <p className="text-white/80">Monday to Saturday</p>
+                        <div className="mb-6 space-y-2">
+                            {CONTACT_INFO.hours.map((hour, i) => (
+                                <div key={i} className="flex items-start gap-3">
+                                    <Clock size={20} className="text-accent flex-shrink-0 mt-1" />
+                                    <p className="text-white/80">{hour}</p>
+                                </div>
+                            ))}
                         </div>
 
                         <h3 className="text-xl font-bold mb-3">Follow Us</h3>

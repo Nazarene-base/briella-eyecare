@@ -91,9 +91,11 @@ export default function ContactPage() {
                                 <div className="flex items-start gap-4">
                                     <MapPin className="text-accent flex-shrink-0" size={24} />
                                     <div>
-                                        <p className="text-gray-700 leading-relaxed">
-                                            {CONTACT_INFO.address}
-                                        </p>
+                                        {CONTACT_INFO.address.map((addr, i) => (
+                                            <p key={i} className="text-gray-700 leading-relaxed">
+                                                {addr}
+                                            </p>
+                                        ))}
                                     </div>
                                 </div>
                                 <div className="flex items-center gap-4">
@@ -111,7 +113,9 @@ export default function ContactPage() {
                                 <div className="flex items-start gap-4">
                                     <Clock className="text-accent flex-shrink-0" size={24} />
                                     <div>
-                                        <p className="text-gray-700">{CONTACT_INFO.hours}</p>
+                                        {CONTACT_INFO.hours.map((hour, i) => (
+                                            <p key={i} className="text-gray-700">{hour}</p>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
