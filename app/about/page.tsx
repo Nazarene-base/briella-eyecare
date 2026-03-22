@@ -1,4 +1,20 @@
+import Image from "next/image";
 import { Shield, Award, Users, Clock, Activity, Heart, Smile } from "lucide-react";
+
+const outreachPhotos = [
+    "outreach-world-sight-day-red-carpet.jpg",
+    "outreach-elderly-patient-eye-exam-outdoor.jpg",
+    "outreach-eye-exam-community-event.jpg",
+    "outreach-pediatric-child-eye-exam-outdoor.jpg",
+    "outreach-trial-frame-consultation-table.jpg",
+    "outreach-equipment-donation-ceremony.jpg",
+    "outreach-your-eyes-at-work-military-event.jpg",
+    "outreach-team-group-full-7-people.jpg",
+    "outreach-team-group-5-people.jpg",
+    "outreach-bp-check-green-uniforms-busy-clinic.jpg",
+    "outreach-clinic-trial-lens-desk-event.jpg",
+    "outreach-team-group-3-males.jpg",
+];
 
 export default function AboutPage() {
     return (
@@ -17,18 +33,34 @@ export default function AboutPage() {
 
             {/* Section 1 - Our Story */}
             <section className="w-full bg-white py-20 px-6">
-                <div className="max-w-[800px] mx-auto">
-                    <h2 className="text-3xl font-bold text-primary mb-6">Our Story</h2>
-                    <div className="space-y-6 text-lg leading-relaxed text-gray-700">
-                        <p>
-                            Briella Eyecare was founded on August 5th, 2021, by Dr. Ogbebor Linda Uwamarin, a licensed optometrist with 15 years of experience. Her vision was simple: to bring quality eye care closer to people — creating a space where patients feel heard, respected, and supported.
-                        </p>
-                        <p>
-                            What began as a commitment to accessible optometry in Benin City has grown into a full-service clinic offering everything from routine eye examinations to specialized pediatric care and disease management.
-                        </p>
-                        <p>
-                            At Briella Eyecare, we believe that clear vision changes lives. Every patient who walks through our doors receives the same standard of care we would give our own family.
-                        </p>
+                <div className="max-w-[1280px] mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+                        <div>
+                            <h2 className="text-3xl font-bold text-primary mb-6">Our Story</h2>
+                            <div className="space-y-6 text-lg leading-relaxed text-gray-700">
+                                <p>
+                                    Briella Eyecare was founded on August 5th, 2021, by Dr. Ogbebor Linda Uwamarin, a licensed optometrist with 15 years of experience. Her vision was simple: to bring quality eye care closer to people — creating a space where patients feel heard, respected, and supported.
+                                </p>
+                                <p>
+                                    What began as a commitment to accessible optometry in Benin City has grown into a full-service clinic offering everything from routine eye examinations to specialized pediatric care and disease management.
+                                </p>
+                                <p>
+                                    At Briella Eyecare, we believe that clear vision changes lives. Every patient who walks through our doors receives the same standard of care we would give our own family.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl min-h-[400px]">
+                            <Image
+                                src="/clinic/interior.jpg"
+                                alt="Inside Briella Eyecare clinic, Benin City"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 45vw"
+                                className="object-cover"
+                            />
+                        </div>
+
                     </div>
                 </div>
             </section>
@@ -76,6 +108,43 @@ export default function AboutPage() {
                             </div>
                         ))}
                     </div>
+                </div>
+            </section>
+
+            {/* Section 3.5 - Outreach Gallery */}
+            <section className="w-full bg-surface py-20 px-6">
+                <div className="max-w-[1280px] mx-auto">
+
+                    <div className="text-center mb-14">
+                        <h2 className="text-4xl font-bold text-primary mb-4">
+                            Beyond the Clinic
+                        </h2>
+                        <p className="text-xl text-secondary font-medium mb-6">
+                            Bringing quality eye care to communities across Benin City
+                        </p>
+                        <p className="text-lg text-gray-600 max-w-[680px] mx-auto leading-relaxed">
+                            At Briella Eyecare, our commitment to vision health doesn't stop at our doors. From World Sight Day outreaches to free community screenings, we take eye care to where the need is.
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {outreachPhotos.map((photo, index) => (
+                            <div
+                                key={index}
+                                className="relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300"
+                                style={{ aspectRatio: '4/3' }}
+                            >
+                                <Image
+                                    src={`/outreach/${photo}`}
+                                    alt="Briella Eyecare community outreach, Benin City"
+                                    fill
+                                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                    className="object-cover hover:scale-105 transition-transform duration-300 ease-in-out"
+                                />
+                            </div>
+                        ))}
+                    </div>
+
                 </div>
             </section>
 

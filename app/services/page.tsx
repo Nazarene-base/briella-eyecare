@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Eye, Focus, FileText, Glasses, Activity, Baby, Target, MessageCircle, LucideIcon } from "lucide-react";
 import { SERVICES, CONTACT_INFO } from "@/lib/constants";
 
@@ -10,6 +11,12 @@ const ICON_MAP: Record<string, LucideIcon> = {
     Activity: Activity,
     Baby: Baby,
     Target: Target,
+};
+
+const SERVICE_PHOTOS: Record<number, string> = {
+    1: "eye-exam.jpg",           // Comprehensive Eye Examinations
+    4: "eyeglasses.jpg",         // Sales of Eyeglasses and Contact Lenses
+    6: "pediatric.jpg",          // Pediatric Optometry
 };
 
 export default function ServicesPage() {
@@ -37,34 +44,49 @@ export default function ServicesPage() {
                                 `Hello, I would like to book an appointment for ${service.title}.`
                             );
                             const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
+                            const hasPhoto = SERVICE_PHOTOS[service.id];
 
                             return (
                                 <div
                                     key={service.id}
-                                    className="bg-white border border-gray-200 rounded-xl p-10 hover:border-accent hover:shadow-lg transition-all duration-200 flex flex-col gap-6"
+                                    className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-lg transition-all duration-200 flex flex-col"
                                 >
-                                    <div className="flex flex-col md:flex-row gap-6 items-start">
-                                        <div className="flex-shrink-0">
-                                            <Icon size={56} className="text-accent" />
+                                    {hasPhoto && (
+                                        <div className="relative w-full rounded-t-xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                                            <Image
+                                                src={`/services/${SERVICE_PHOTOS[service.id]}`}
+                                                alt={`${service.title} at Briella Eyecare`}
+                                                fill
+                                                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                                                className="object-cover"
+                                            />
                                         </div>
-                                        <div className="flex-grow">
-                                            <h3 className="text-2xl font-semibold text-primary mb-3">
-                                                {service.title}
-                                            </h3>
-                                            <p className="text-base text-gray-500 leading-relaxed mb-4">
-                                                {service.description}
-                                            </p>
+                                    )}
+
+                                    <div className="p-10 flex flex-col gap-6 flex-grow">
+                                        <div className="flex flex-col md:flex-row gap-6 items-start">
+                                            <div className="flex-shrink-0">
+                                                <Icon size={56} className="text-accent" />
+                                            </div>
+                                            <div className="flex-grow">
+                                                <h3 className="text-2xl font-semibold text-primary mb-3">
+                                                    {service.title}
+                                                </h3>
+                                                <p className="text-base text-gray-500 leading-relaxed mb-4">
+                                                    {service.description}
+                                                </p>
+                                            </div>
                                         </div>
+                                        <Link
+                                            href={whatsappUrl}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark transition-colors duration-200"
+                                        >
+                                            <MessageCircle size={20} />
+                                            Book This Service
+                                        </Link>
                                     </div>
-                                    <Link
-                                        href={whatsappUrl}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-accent-dark transition-colors duration-200"
-                                    >
-                                        <MessageCircle size={20} />
-                                        Book This Service
-                                    </Link>
                                 </div>
                             );
                         })}
