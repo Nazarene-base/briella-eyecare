@@ -15,9 +15,17 @@ const ICON_MAP: Record<string, LucideIcon> = {
 };
 
 const SERVICE_PHOTOS: Record<number, string> = {
-    1: "eye-exam.jpg",           // Comprehensive Eye Examinations
-    4: "eyeglasses.jpg",         // Sales of Eyeglasses and Contact Lenses
-    6: "pediatric.jpg",          // Pediatric Optometry
+    1: "eye-exam.jpg",
+    2: "auto ref equipment.jpg",
+    3: "prescription.jpg",
+    4: "eyeglasses.jpg",
+    5: "diagnosis.jpg",
+    6: "pediatric.jpg",
+    7: "vision train.jpg",
+};
+
+const SERVICE_PHOTO_POSITION: Record<number, string> = {
+    6: "object-top",
 };
 
 export default function ServicesPage() {
@@ -50,13 +58,13 @@ export default function ServicesPage() {
                                     className="bg-white border border-gray-200 rounded-xl overflow-hidden hover:border-accent hover:shadow-lg transition-all duration-200 flex flex-col"
                                 >
                                     {hasPhoto && (
-                                        <div className="relative w-full rounded-t-xl overflow-hidden" style={{ aspectRatio: '16/9' }}>
+                                        <div className="relative w-full rounded-t-xl overflow-hidden" style={{ aspectRatio: '4/3' }}>
                                             <Image
                                                 src={`/services/${SERVICE_PHOTOS[service.id]}`}
                                                 alt={`${service.title} at Briella Eyecare`}
                                                 fill
                                                 sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                                                className="object-cover"
+                                                className={`object-cover ${SERVICE_PHOTO_POSITION[service.id] ?? "object-center"}`}
                                             />
                                         </div>
                                     )}

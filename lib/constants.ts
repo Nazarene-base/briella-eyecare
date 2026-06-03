@@ -29,13 +29,15 @@ export const SERVICES = [
         id: 2,
         title: "Refraction",
         description: "The specific test used to determine the exact lens power needed to correct nearsightedness, farsightedness, or astigmatism.",
-        icon: "Focus"
+        icon: "Focus",
+        image: "/services/auto ref equipment.jpg"
     },
     {
         id: 3,
         title: "Prescription Services",
         description: "The issuance of a formal medical prescription for corrective lenses based on the findings of the refraction test.",
-        icon: "FileText"
+        icon: "FileText",
+        image: "/services/prescription.jpg"
     },
     {
         id: 4,
@@ -48,7 +50,8 @@ export const SERVICES = [
         id: 5,
         title: "Disease Diagnosis & Management",
         description: "The medical identification and treatment of ocular conditions such as glaucoma, cataracts, infections, and dry eye syndrome.",
-        icon: "Activity"
+        icon: "Activity",
+        image: "/services/diagnosis.jpg"
     },
     {
         id: 6,
@@ -61,7 +64,8 @@ export const SERVICES = [
         id: 7,
         title: "Vision Therapy",
         description: "A customized program of exercises designed to retrain the brain and eyes to work together more effectively.",
-        icon: "Target"
+        icon: "Target",
+        image: "/services/vision train.jpg"
     }
 ];
 
