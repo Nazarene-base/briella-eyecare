@@ -2,13 +2,10 @@
 
 import Link from "next/link";
 import { MessageCircle } from "lucide-react";
-import { CONTACT_INFO } from "@/lib/constants";
+import { getWhatsAppUrl, WHATSAPP_INQUIRY_MESSAGE } from "@/lib/utils";
 
 export default function WhatsAppButton() {
-    const whatsappMessage = encodeURIComponent(
-        "Hello, I have a question about Briella Eyecare."
-    );
-    const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
+    const whatsappUrl = getWhatsAppUrl(WHATSAPP_INQUIRY_MESSAGE);
 
     return (
         <Link

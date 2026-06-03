@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Shield, Award, Users, Clock, Activity, Heart, Smile } from "lucide-react";
+import { Shield, Users, Activity, Heart, Smile } from "lucide-react";
 
 const outreachPhotos = [
     "outreach-world-sight-day-red-carpet.jpg",
@@ -84,25 +84,32 @@ export default function AboutPage() {
                         Meet Our Team
                     </h2>
 
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+                    <div className="flex flex-wrap justify-center gap-10">
                         {[
-                            { name: "Dr. Linda Uwamarin", role: "Principal Optometrist", bio: "Dr. Linda is a licensed optometrist with 15 years of clinical experience and a specialist in Glaucoma and its masquerade. She founded Briella Eyecare in August 2021 with a mission to make quality eye care accessible to every family in Benin City." },
-                            { name: "Amayo Salvation Aisosa", role: "Optician", bio: "Aisosa brings enthusiasm and a genuine love for people to every patient interaction. Passionate about the craft of opticianry, she thrives on learning and is always exploring new ideas to improve patient experience." },
-                            { name: "Dr. Enock Titus Ehyame", role: "Optometrist", bio: "Dr. Enock combines clinical precision with an eye on the future — passionate about contributing to environmental sustainability through eyecare innovation. Known for being easy to approach and eager to grow." },
-                            { name: "Dr. Ozoma Blessing Nwanfor", role: "Optometrist", bio: "Dr. Ozy is driven by innovation, always looking for new ways to solve problems both within and beyond the eyecare profession. Her forward-thinking approach brings fresh perspectives to patient care." }
+                            { name: "Dr. Enock Titus Ehyame", role: "Optometrist", bio: "Dr. Enock is driven by excellence and compassion, always striving to improve eye health and patient outcomes. His dedication to professional growth and quality eye care enables him to provide innovative solutions while making a positive impact in the lives of his patients and community.", photo: "/team/Dr. Enock Titus Ehyame.jpg" },
+                            { name: "Dr. Ozioma Blessing Nwafor", role: "Optometrist", bio: "Dr. Ozy is driven by innovation, always looking for new ways to solve problems both within and beyond the eyecare profession. Her forward-thinking approach brings fresh perspectives to patient care.", photo: "/team/Dr. Ozioma Blessing Nwafor.jpg" },
+                            { name: "Dr. Ikeri Chigozie Ikechukwu", role: "Optometrist", bio: "Dr. Chigozie is a dedicated optometrist who believes that the best eye care outcomes are achieved through a strong partnership between doctor and patient. Combining clinical expertise with deep compassion, clear communication, and a commitment to your long-term eye health.", photo: "/team/Dr. Ikeri Chigozie Ikechukwu.jpg" },
+                            { name: "Dr. Philip Oseyomon", role: "Optometrist", bio: "Dr. Philip is passionate about helping people achieve and maintain healthy vision with compassionate, patient-centered eye care — through attentive listening, thorough examinations, and modern clinical practices.", photo: "/team/Dr. Philip Oseyomon.jpg" },
+                            { name: "Dr. Onwudiwe Chike Paul", role: "HMO Manager / Optometrist", bio: "Doc Chyke is driven by innovation, always looking for new ways to solve problems both within and beyond the eyecare profession. His forward-thinking approach brings fresh perspectives to patient care.", photo: "/team/Dr. Onwudiwe Chike Paul.jpg" },
                         ].map((member, i) => (
                             <div
                                 key={i}
-                                className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300"
+                                className="bg-white border border-gray-100 rounded-2xl p-8 text-center shadow-md hover:shadow-xl transition-shadow duration-300 w-full md:w-[calc(50%-20px)] lg:w-[calc(33.333%-27px)]"
                             >
-                                <div className="w-32 h-32 rounded-full bg-surface mx-auto mb-6 flex items-center justify-center border-4 border-accent/20">
-                                    <Users size={48} className="text-accent" />
+                                <div className="relative w-36 h-36 rounded-full overflow-hidden mx-auto mb-6 border-4 border-accent/30 shadow-md">
+                                    <Image
+                                        src={member.photo}
+                                        alt={`Photo of ${member.name}`}
+                                        fill
+                                        sizes="144px"
+                                        className="object-cover object-top"
+                                    />
                                 </div>
-                                <h3 className="text-2xl font-bold text-primary mb-2">
+                                <h3 className="text-xl font-bold text-primary mb-1">
                                     {member.name}
                                 </h3>
-                                <p className="text-lg text-secondary font-medium mb-4">{member.role}</p>
-                                <p className="text-gray-500 leading-relaxed">
+                                <p className="text-base text-secondary font-medium mb-3">{member.role}</p>
+                                <p className="text-gray-500 text-sm leading-relaxed">
                                     {member.bio}
                                 </p>
                             </div>

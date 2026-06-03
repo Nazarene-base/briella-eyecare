@@ -74,6 +74,7 @@ export default function Navbar() {
                     onClick={() => setIsMenuOpen(!isMenuOpen)}
                     className="md:hidden p-2 text-gray-700"
                     aria-label="Toggle menu"
+                    aria-expanded={isMenuOpen}
                 >
                     {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
                 </button>

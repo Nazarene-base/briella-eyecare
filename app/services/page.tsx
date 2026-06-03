@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { Eye, Focus, FileText, Glasses, Activity, Baby, Target, MessageCircle, LucideIcon } from "lucide-react";
-import { SERVICES, CONTACT_INFO } from "@/lib/constants";
+import { SERVICES } from "@/lib/constants";
+import { getWhatsAppUrl, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/utils";
 
 const ICON_MAP: Record<string, LucideIcon> = {
     Eye: Eye,
@@ -40,10 +41,7 @@ export default function ServicesPage() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {SERVICES.map((service) => {
                             const Icon = ICON_MAP[service.icon] || Eye;
-                            const whatsappMessage = encodeURIComponent(
-                                `Hello, I would like to book an appointment for ${service.title}.`
-                            );
-                            const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
+                            const whatsappUrl = getWhatsAppUrl(`Hello, I would like to book an appointment for ${service.title}.`);
                             const hasPhoto = SERVICE_PHOTOS[service.id];
 
                             return (
@@ -101,7 +99,7 @@ export default function ServicesPage() {
                         Ready to book your appointment?
                     </h2>
                     <Link
-                        href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent("Hello, I would like to book an appointment at Briella Eyecare.")}`}
+                        href={getWhatsAppUrl(WHATSAPP_DEFAULT_MESSAGE)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-3 bg-accent text-white px-12 py-4 rounded-lg text-lg font-semibold hover:bg-accent-dark transition-colors duration-200"

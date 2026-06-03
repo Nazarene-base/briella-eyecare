@@ -1,13 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
-import { CONTACT_INFO } from "@/lib/constants";
+import { getWhatsAppUrl, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/utils";
 
 export default function Hero() {
-    const whatsappMessage = encodeURIComponent(
-        "Hello, I would like to book an appointment at Briella Eyecare."
-    );
-    const whatsappUrl = `https://wa.me/${CONTACT_INFO.whatsapp}?text=${whatsappMessage}`;
+    const whatsappUrl = getWhatsAppUrl(WHATSAPP_DEFAULT_MESSAGE);
 
     return (
         <section className="relative w-full min-h-[500px] md:min-h-[600px] flex items-center justify-center">

@@ -1,5 +1,6 @@
-import { CONTACT_INFO } from "@/lib/constants";
+import { CONTACT_INFO, MAPS_EMBED_URL } from "@/lib/constants";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { getWhatsAppUrl, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/utils";
 
 export default function ContactPage() {
     return (
@@ -29,7 +30,7 @@ export default function ContactPage() {
                             </a>
                         </p>
                         <a
-                            href={`https://wa.me/${CONTACT_INFO.whatsapp}?text=${encodeURIComponent("Hello, I would like to book an appointment at Briella Eyecare.")}`}
+                            href={getWhatsAppUrl(WHATSAPP_DEFAULT_MESSAGE)}
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block w-full bg-accent hover:bg-accent/90 text-white text-center font-semibold py-4 rounded-lg text-lg transition-colors duration-200 mb-6"
@@ -44,66 +45,6 @@ export default function ContactPage() {
                                 </a>
                             </p>
                         </div>
-                        <form style={{display: 'none'}} action="https://formspree.io/f/YOUR_FORM_ID" method="POST" className="space-y-5">
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Full Name
-                                </label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    placeholder="John Doe"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Email Address
-                                </label>
-                                <input
-                                    type="email"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    placeholder="you@example.com"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Phone Number
-                                </label>
-                                <input
-                                    type="tel"
-                                    id="phone"
-                                    name="phone"
-                                    required
-                                    placeholder="0803 218 4887"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
-                                />
-                            </div>
-                            <div>
-                                <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">
-                                    Message
-                                </label>
-                                <textarea
-                                    id="message"
-                                    name="message"
-                                    required
-                                    rows={6}
-                                    placeholder="How can we help you?"
-                                    className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-secondary focus:border-transparent transition-all resize-none"
-                                ></textarea>
-                            </div>
-                            <button
-                                type="submit"
-                                className="w-full bg-accent hover:bg-accent-dark text-white font-semibold py-4 rounded-lg text-lg transition-colors duration-200"
-                            >
-                                Send Message
-                            </button>
-                        </form>
                     </div>
 
                     {/* Right Column - Contact Information */}
@@ -146,7 +87,7 @@ export default function ContactPage() {
                             {/* Google Maps Embed */}
                             <div className="mt-10 rounded-lg overflow-hidden border border-gray-200 shadow-sm h-[300px]">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.8697!2d5.6244!3d6.3387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjAnMTkuMyJOIDXCsDM3JzI3LjgiRQ!5e0!3m2!1sen!2sng!4v1234567890"
+                                    src={MAPS_EMBED_URL}
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
