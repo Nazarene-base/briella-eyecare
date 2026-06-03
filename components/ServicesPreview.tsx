@@ -1,27 +1,24 @@
 import Link from "next/link";
-import { Eye, Glasses, Baby, LucideIcon } from "lucide-react";
+import Image from "next/image";
+import { Eye, Focus, FileText, Glasses, Activity, Baby, Target, LucideIcon } from "lucide-react";
 import { SERVICES, TOP_SERVICES } from "@/lib/constants";
 
 const ICON_MAP: Record<string, LucideIcon> = {
     Eye: Eye,
+    Focus: Focus,
+    FileText: FileText,
     Glasses: Glasses,
+    Activity: Activity,
     Baby: Baby,
+    Target: Target,
 };
 
 export default function ServicesPreview() {
-    return (
-        <section className="relative w-full py-20 md:py-20 px-6 bg-surface overflow-hidden">
-            {/* Subtle Background Image - Very Low Opacity */}
-            <div
-                className="absolute inset-0 opacity-[0.15]"
-                style={{
-                    backgroundImage: "url('/services-background.jpg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                }}
-            />
+    const featured = SERVICES.filter((s) => TOP_SERVICES.includes(s.id));
 
-            <div className="relative z-10 max-w-[1280px] mx-auto">
+    return (
+        <section className="relative w-full py-20 px-6 bg-surface overflow-hidden">
+            <div className="max-w-[1280px] mx-auto">
                 {/* Section Header */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl md:text-[40px] font-bold text-primary mb-4">
@@ -34,22 +31,40 @@ export default function ServicesPreview() {
 
                 {/* Services Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
-                    {SERVICES.filter((s) => TOP_SERVICES.includes(s.id)).map((service) => {
+                    {featured.map((service) => {
                         const Icon = ICON_MAP[service.icon] || Eye;
                         return (
                             <div
                                 key={service.id}
-                                className="bg-white rounded-xl p-8 shadow-md hover:shadow-xl transition-all duration-300 hover:-translate-y-1 text-center"
+                                className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300 flex flex-col"
                             >
-                                <div className="flex justify-center mb-4">
-                                    <Icon size={48} className="text-accent" />
+                                {/* Photo */}
+                                <div className="relative w-full h-56 overflow-hidden">
+                                    {service.image && (
+                                        <Image
+                                            src={service.image}
+                                            alt={service.title}
+                                            fill
+                                            className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                        />
+                                    )}
+
+                                    {/* Floating icon chip */}
+                                    <div className="absolute bottom-4 left-4 z-10 bg-accent rounded-full p-2.5 shadow-md">
+                                        <Icon size={20} className="text-white" />
+                                    </div>
                                 </div>
-                                <h3 className="text-xl font-semibold text-primary mb-3">
-                                    {service.title}
-                                </h3>
-                                <p className="text-base text-gray-500 leading-relaxed">
-                                    {service.description}
-                                </p>
+
+                                {/* Text content */}
+                                <div className="p-6">
+                                    <h3 className="text-xl font-semibold text-primary mb-3">
+                                        {service.title}
+                                    </h3>
+                                    <p className="text-base text-gray-500 leading-relaxed">
+                                        {service.description}
+                                    </p>
+                                </div>
                             </div>
                         );
                     })}
@@ -68,4 +83,3 @@ export default function ServicesPreview() {
         </section>
     );
 }
-
