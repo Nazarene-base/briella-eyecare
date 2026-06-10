@@ -19,8 +19,8 @@ const SERVICE_PHOTOS: Record<number, string> = {
     2: "auto ref equipment.jpg",
     3: "prescription.jpg",
     4: "eyeglasses.jpg",
-    5: "diagnosis.jpg",
-    6: "pediatric.jpg",
+    5: "Disease Diagnosis & Management.jpeg",
+    6: "Pediatric Optometry.jpeg",
     7: "vision train.jpg",
 };
 
