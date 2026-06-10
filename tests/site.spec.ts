@@ -41,7 +41,7 @@ test.describe('Briella Eyecare Site Verification', () => {
         await expect(page.locator('text=Book Appointment via WhatsApp')).toBeVisible();
         // Contact info
         await expect(page.locator('text=0909 036 8786')).toBeVisible();
-        await expect(page.locator('text=Briella-eyecare@gmail.com')).toBeVisible();
+        await expect(page.locator('text=Briellaeyecare@gmail.com')).toBeVisible();
         // Map iframe
         await expect(page.locator('iframe[src*="google.com/maps"]')).toBeVisible();
         await page.screenshot({ path: 'test-results/contact.png', fullPage: true });

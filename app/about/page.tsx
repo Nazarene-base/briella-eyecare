@@ -65,8 +65,64 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section 2 - Mission Statement */}
+            {/* Section 2 - Meet the Founder */}
             <section className="w-full bg-surface py-20 px-6">
+                <div className="max-w-[1280px] mx-auto">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+                        <div className="relative rounded-2xl overflow-hidden shadow-xl w-full" style={{ aspectRatio: '3/4', maxHeight: '580px' }}>
+                            <Image
+                                src="/Dr Uwa.jpeg"
+                                alt="Dr. Ogbebor Linda Uwamarin, Founder and Lead Optometrist at Briella Eyecare"
+                                fill
+                                sizes="(max-width: 1024px) 100vw, 45vw"
+                                className="object-cover object-top"
+                            />
+                        </div>
+
+                        <div className="flex flex-col justify-center">
+                            <p className="text-accent font-semibold text-sm uppercase tracking-widest mb-3">Meet the Founder</p>
+                            <h2 className="text-4xl font-bold text-primary mb-2">Dr. Ogbebor Linda Uwamarin</h2>
+                            <p className="text-secondary font-medium text-lg mb-10">Founder &amp; Lead Optometrist</p>
+
+                            <div className="flex gap-12 mb-10">
+                                <div>
+                                    <p className="text-3xl font-bold text-primary">15+</p>
+                                    <p className="text-sm text-gray-500 mt-1">Years of Experience</p>
+                                </div>
+                                <div>
+                                    <p className="text-3xl font-bold text-primary">2021</p>
+                                    <p className="text-sm text-gray-500 mt-1">Year Founded</p>
+                                </div>
+                                <div>
+                                    <p className="text-3xl font-bold text-primary">7</p>
+                                    <p className="text-sm text-gray-500 mt-1">Clinical Services</p>
+                                </div>
+                            </div>
+
+                            <div className="space-y-5 text-lg leading-relaxed text-gray-700 mb-10">
+                                <p>
+                                    Dr. Linda Uwamarin is a licensed optometrist whose career has been defined by one unwavering belief: that quality eye care should not be a privilege — it should be accessible to every person, in every community.
+                                </p>
+                                <p>
+                                    With over 15 years of clinical experience, she founded Briella Eyecare on August 5th, 2021, with a clear purpose — to build a clinic where patients feel genuinely heard, respected, and cared for, not just examined and sent home.
+                                </p>
+                                <p>
+                                    Under her leadership, Briella has grown from a single-service practice into a full-service eye care centre, and her commitment to community outreach has taken the clinic's work far beyond its four walls.
+                                </p>
+                            </div>
+
+                            <blockquote className="border-l-4 border-accent pl-6 italic text-gray-600 text-lg leading-relaxed">
+                                "Clear vision changes lives. My goal has always been simple — to give every patient the same standard of care I would give my own family."
+                            </blockquote>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            {/* Section 3 - Mission Statement */}
+            <section className="w-full bg-white py-20 px-6">
                 <div className="max-w-[1000px] mx-auto border-l-8 border-accent pl-10">
                     <h2 className="text-3xl font-bold text-primary mb-6">Our Mission</h2>
                     <p className="text-2xl italic leading-relaxed text-gray-600">
@@ -77,8 +133,8 @@ export default function AboutPage() {
                 </div>
             </section>
 
-            {/* Section 3 - Team */}
-            <section className="w-full bg-white py-20 px-6">
+            {/* Section 4 - Team */}
+            <section className="w-full bg-surface py-20 px-6">
                 <div className="max-w-[1280px] mx-auto">
                     <h2 className="text-4xl font-bold text-primary text-center mb-16">
                         Meet Our Team
@@ -92,6 +148,7 @@ export default function AboutPage() {
                             { name: "Dr. Philip Oseyomon", role: "Optometrist", bio: "Dr. Philip is passionate about helping people achieve and maintain healthy vision with compassionate, patient-centered eye care — through attentive listening, thorough examinations, and modern clinical practices.", photo: "/team/Dr. Philip Oseyomon.jpg" },
                             { name: "Dr. Onwudiwe Chike Paul", role: "HMO Manager / Optometrist", bio: "Doc Chike brings a rare blend of clinical expertise and healthcare management to Briella Eyecare. As HMO Manager, he bridges quality patient care with seamless insurance coordination — making sure every patient gets the attention they deserve, without the administrative friction.", photo: "/team/Dr. Onwudiwe Chike Paul.jpg" },
                             { name: "Dr. Uka Obasi Uka", role: "Optometrist", bio: "Dr. Uka is passionate about the intersection of technology and eye care — always exploring cutting-edge solutions to deliver more precise, efficient, and modern clinical experiences. He believes that the future of optometry lies in innovation, and brings that mindset to every patient he sees.", photo: "/team/Dr.Uka Obasi Uka.jpg" },
+                            { name: "Ikhiuwu Osasumwen Mercy", role: "Secretary", bio: "Mercy is often the first voice and face patients encounter at Briella Eyecare — and she takes that role seriously. As clinic secretary, she keeps appointments organised, enquiries answered, and the day running smoothly, all while making sure every patient feels welcome and at ease from the moment they arrive.", photo: "/Secretary.jpg" },
                         ].map((member, i) => (
                             <div
                                 key={i}
@@ -120,7 +177,7 @@ export default function AboutPage() {
             </section>
 
             {/* Section 3.5 - Outreach Gallery */}
-            <section className="w-full bg-surface py-20 px-6">
+            <section className="w-full bg-white py-20 px-6">
                 <div className="max-w-[1280px] mx-auto">
 
                     <div className="text-center mb-14">

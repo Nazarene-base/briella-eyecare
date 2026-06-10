@@ -2,18 +2,17 @@
 - No active task in progress
 
 ## Recently completed
-- Added photos to all 7 services on the Services page (previously only 3 had photos)
-- Sourced prescription.jpg from Pexels (Paloma Gil); vision train.jpg added by user
-- Switched service card aspect ratio from 16:9 to 4:3 for better subject framing
-- Fixed pediatric photo crop with object-top to prevent bottom cutoff
-- Added Dr. Uka Obasi Uka to About page team section with photo and bio
-- Updated Dr. Onwudiwe Chike Paul's bio on About page
+- Added founder section to About page featuring Dr. Ogbebor Linda Uwamarin (photo, bio, 3 stats, pull-quote)
+- Added Ikhiuwu Osasumwen Mercy (Secretary) as 7th card in team section
+- Replaced disease management and pediatric service images with new user-supplied photos
+- Fixed email in constants.ts — removed hyphen (Briellaeyecare@gmail.com)
+- Cleaned up About page section background alternation for consistent visual rhythm
 
 ## Known issues
-- Dr. Ozioma's photo is a full-body shot — circular crop with object-top may need fine-tuning once previewed live
+- Dr. Ozioma's photo is a full-body shot — circular crop with object-top may need fine-tuning
 
 ## Next entry point
-Review all 7 service card photos on the live Services page for crop/framing. Then plan Dr. Linda's CEO/Founder section on the About page.
+Review the live About page: founder section layout, Mercy's card, and section background alternation. Then review service cards for the two updated photos.
 
 ## Open decisions
-- Where to feature Dr. Linda as CEO/Founder — dedicated section on About page or a founder callout block?
+- None

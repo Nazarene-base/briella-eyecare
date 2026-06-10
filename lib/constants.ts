@@ -5,7 +5,7 @@ export const CONTACT_INFO = {
     ],
     phone: "0909 036 8786",
     whatsapp: "2349090368786", // International format
-    email: "Briella-eyecare@gmail.com",
+    email: "Briellaeyecare@gmail.com",
     hours: [
         "Monday – Friday: 8:00am – 5:00pm",
         "Saturday: 10:00am – 2:00pm",
@@ -51,14 +51,14 @@ export const SERVICES = [
         title: "Disease Diagnosis & Management",
         description: "The medical identification and treatment of ocular conditions such as glaucoma, cataracts, infections, and dry eye syndrome.",
         icon: "Activity",
-        image: "/services/diagnosis.jpg"
+        image: "/services/Disease Diagnosis & Management.jpeg"
     },
     {
         id: 6,
         title: "Pediatric Optometry",
         description: "Specialized eye care focused on the visual development and eye health of infants and children.",
         icon: "Baby",
-        image: "/services/pediatric.jpg"
+        image: "/services/Pediatric Optometry.jpeg"
     },
     {
         id: 7,
