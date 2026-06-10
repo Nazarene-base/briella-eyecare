@@ -3,7 +3,7 @@ import { Shield, Users, Activity, Heart, Smile } from "lucide-react";
 
 const outreachPhotos = [
     // Row 1 — new photos lead
-    "new/WhatsApp Image 2026-06-04 at 9.26.04 AM.jpeg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM.jpeg",
     "new/WhatsApp Image 2026-06-04 at 9.26.16 AM.jpeg",
     "new/WhatsApp Image 2026-06-04 at 9.26.22 AM.jpeg",
     // Row 2
@@ -13,7 +13,7 @@ const outreachPhotos = [
     // Row 3
     "new/WhatsApp Image 2026-06-04 at 9.26.15 AM.jpeg",
     "outreach-eye-exam-community-event.jpg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM.jpeg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.04 AM.jpeg",
     // Row 4
     "outreach-pediatric-child-eye-exam-outdoor.jpg",
     "new/WhatsApp Image 2026-06-04 at 9.26.04 AM (2).jpeg",
