@@ -2,37 +2,48 @@ import Image from "next/image";
 import { Shield, Users, Activity, Heart, Smile } from "lucide-react";
 
 const outreachPhotos = [
-    "outreach-world-sight-day-red-carpet.jpg",
-    "outreach-elderly-patient-eye-exam-outdoor.jpg",
-    "outreach-eye-exam-community-event.jpg",
-    "outreach-pediatric-child-eye-exam-outdoor.jpg",
-    "outreach-trial-frame-consultation-table.jpg",
-    "outreach-equipment-donation-ceremony.jpg",
-    "outreach-your-eyes-at-work-military-event.jpg",
-    "outreach-team-group-full-7-people.jpg",
-    "outreach-team-group-5-people.jpg",
-    "outreach-bp-check-green-uniforms-busy-clinic.jpg",
-    "outreach-clinic-trial-lens-desk-event.jpg",
-    "outreach-team-group-3-males.jpg",
+    // Row 1 — new photos lead
     "new/WhatsApp Image 2026-06-04 at 9.26.04 AM.jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.04 AM (1).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.04 AM (2).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.11 AM (1).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM.jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM (1).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM (2).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM (3).jpeg",
     "new/WhatsApp Image 2026-06-04 at 9.26.16 AM.jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.16 AM (1).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.16 AM (2).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.16 AM (3).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM.jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM (1).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM (2).jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.18 AM.jpeg",
-    "new/WhatsApp Image 2026-06-04 at 9.26.18 AM (1).jpeg",
     "new/WhatsApp Image 2026-06-04 at 9.26.22 AM.jpeg",
+    // Row 2
+    "outreach-world-sight-day-red-carpet.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.04 AM (1).jpeg",
+    "outreach-elderly-patient-eye-exam-outdoor.jpg",
+    // Row 3
+    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM.jpeg",
+    "outreach-eye-exam-community-event.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM.jpeg",
+    // Row 4
+    "outreach-pediatric-child-eye-exam-outdoor.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.04 AM (2).jpeg",
+    "outreach-trial-frame-consultation-table.jpg",
+    // Row 5
+    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM (1).jpeg",
+    "outreach-equipment-donation-ceremony.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.16 AM (1).jpeg",
+    // Row 6
+    "outreach-your-eyes-at-work-military-event.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM (1).jpeg",
+    "outreach-team-group-full-7-people.jpg",
+    // Row 7
+    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM (2).jpeg",
+    "outreach-team-group-5-people.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.17 AM (2).jpeg",
+    // Row 8
+    "outreach-bp-check-green-uniforms-busy-clinic.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.11 AM (1).jpeg",
+    "outreach-clinic-trial-lens-desk-event.jpg",
+    // Row 9
+    "new/WhatsApp Image 2026-06-04 at 9.26.15 AM (3).jpeg",
+    "outreach-team-group-3-males.jpg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.18 AM.jpeg",
+    // Row 10
+    "new/WhatsApp Image 2026-06-04 at 9.26.16 AM (2).jpeg",
+    "new/WhatsApp Image 2026-06-04 at 9.26.18 AM (1).jpeg",
     "new/WhatsApp Image 2026-06-04 at 9.26.23 AM.jpeg",
+    // Row 11
+    "new/WhatsApp Image 2026-06-04 at 9.26.16 AM (3).jpeg",
     "new/WhatsApp Image 2026-06-04 at 9.26.23 AM (1).jpeg",
 ];
 
