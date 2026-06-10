@@ -1,7 +1,15 @@
 export const CONTACT_INFO = {
-    address: [
-        "1, Eheneden Street, off Ekehuan Road, Benin City",
-        "31, Akenzua Street, off Airport Road, Benin City"
+    locations: [
+        {
+            label: "Head Office",
+            address: "1, Eheneden Street, off Ekehuan Road, Benin City",
+            mapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979!2d5.6068656!3d6.3368985!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d3a71435378d%3A0x15cb5602209693a2!2sBriella%20Eye%20Care!5e0!3m2!1sen!2sng!4v1749547200000"
+        },
+        {
+            label: "Branch Office",
+            address: "31, Akenzua Street, off Airport Road, Benin City",
+            mapsUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d979!2d5.6118637!3d6.3314923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1040d38efc90f11f%3A0x23707006f03fb6ee!2sBriella%20Eyecare%20Clinic!5e0!3m2!1sen!2sng!4v1749547200000"
+        },
     ],
     phone: "0909 036 8786",
     whatsapp: "2349090368786", // International format
@@ -71,5 +79,3 @@ export const SERVICES = [
 
 export const TOP_SERVICES = [1, 4, 6]; // IDs of services to show on homepage
 
-export const MAPS_EMBED_URL =
-    "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3940.8697!2d5.6244!3d6.3387!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjAnMTkuMyJOIDXCsDM3JzI3LjgiRQ!5e0!3m2!1sen!2sng!4v1234567890";

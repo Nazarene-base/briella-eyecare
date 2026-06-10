@@ -22,14 +22,15 @@ export default function Footer() {
                     <div>
                         <h3 className="text-xl font-bold mb-4">Contact Us</h3>
                         <div className="space-y-3">
-                            <div className="flex items-start gap-3">
-                                <MapPin size={20} className="text-accent flex-shrink-0 mt-1" />
-                                <div>
-                                    {CONTACT_INFO.address.map((addr, i) => (
-                                        <p key={i} className="leading-relaxed mb-1">{addr}</p>
-                                    ))}
+                            {CONTACT_INFO.locations.map((loc, i) => (
+                                <div key={i} className="flex items-start gap-3">
+                                    <MapPin size={20} className="text-accent flex-shrink-0 mt-1" />
+                                    <div>
+                                        <p className="text-xs font-semibold text-accent uppercase tracking-widest mb-0.5">{loc.label}</p>
+                                        <p className="leading-relaxed text-white/80">{loc.address}</p>
+                                    </div>
                                 </div>
-                            </div>
+                            ))}
                             <div className="flex items-center gap-3">
                                 <Phone size={20} className="text-accent flex-shrink-0" />
                                 <a

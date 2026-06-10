@@ -1,4 +1,4 @@
-import { CONTACT_INFO, MAPS_EMBED_URL } from "@/lib/constants";
+import { CONTACT_INFO } from "@/lib/constants";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { getWhatsAppUrl, WHATSAPP_DEFAULT_MESSAGE } from "@/lib/utils";
 
@@ -52,16 +52,6 @@ export default function ContactPage() {
                         <div className="bg-surface rounded-xl p-8 md:p-10">
                             <h2 className="text-2xl font-bold text-primary mb-8">Contact Information</h2>
                             <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <MapPin className="text-accent flex-shrink-0" size={24} />
-                                    <div>
-                                        {CONTACT_INFO.address.map((addr, i) => (
-                                            <p key={i} className="text-gray-700 leading-relaxed">
-                                                {addr}
-                                            </p>
-                                        ))}
-                                    </div>
-                                </div>
                                 <div className="flex items-center gap-4">
                                     <Phone className="text-accent flex-shrink-0" size={24} />
                                     <a href={`tel:${CONTACT_INFO.phone.replace(/\s+/g, '')}`} className="text-gray-700 hover:text-secondary transition-colors">
@@ -83,11 +73,24 @@ export default function ContactPage() {
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+                </div>
 
-                            {/* Google Maps Embed */}
-                            <div className="mt-10 rounded-lg overflow-hidden border border-gray-200 shadow-sm h-[300px]">
+                {/* Location Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                    {CONTACT_INFO.locations.map((loc, i) => (
+                        <div key={i} className="bg-surface rounded-xl p-6">
+                            <span className="inline-block bg-accent text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-widest">
+                                {loc.label}
+                            </span>
+                            <div className="flex items-start gap-3 mb-5">
+                                <MapPin className="text-accent flex-shrink-0 mt-0.5" size={20} />
+                                <p className="text-gray-700 leading-relaxed">{loc.address}</p>
+                            </div>
+                            <div className="rounded-lg overflow-hidden border border-gray-200 shadow-sm h-[260px]">
                                 <iframe
-                                    src={MAPS_EMBED_URL}
+                                    src={loc.mapsUrl}
                                     width="100%"
                                     height="100%"
                                     style={{ border: 0 }}
@@ -97,7 +100,7 @@ export default function ContactPage() {
                                 ></iframe>
                             </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
             </section>
         </main>
